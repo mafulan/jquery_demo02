@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    div{
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        /* bottom:0; */
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: red;
+    }
+    </style>
+</head>
+<body>
+    <div></div>
+    <script src="jquery-1.10.1.min.js"></script>
+    <script src="velocity.min.js"></script>
+    <script>
+    $("div").css("top",document.documentElement.clientHeight-$("div").outerHeight());
+    $("div").click(function (){
+        $(this).velocity({"top":0},{"complete":function (){
+            $(this).velocity("reverse");
+        }});
+    })
+    </script>
+</body>
+</html>

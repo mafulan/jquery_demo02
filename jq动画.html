@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    div{
+        width: 150px;
+        height: 150px;
+        background-color: red;
+    }
+    </style>
+</head>
+<body>
+    <div></div>
+    <script src="jquery-1.10.1.min.js"></script>
+    <script>
+    // $("div").click(function (){
+    //     $(this).animate({"width":400,"height":300},1200,"linear",function (){
+    //         $(this).css("backgroundColor","blue");
+    //     })
+    // })
+    $("div").mouseover(function (){
+        $(this).animate({"width":400,},1200,"linear").delay("600").animate({"height":300,},1200,"linear");
+        $(this).click(function (){
+            // $(this).stop();//只会阻止当前正在执行的动画
+            // $(this).stop(true);//阻止当前和后续所有动画
+            // $(this).stop(true,true);//阻止当前和后续所有动画并移动至当前动画的终点
+            // $(this).finish();//阻止当前和后续所有动画并移动至所有动画的终点
+            console.log($(this).is(":animated"));
+        })
+    })
+    </script>
+</body>
+</html>
